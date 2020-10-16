@@ -1,0 +1,8 @@
+.services-card{
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.services-card:hover{
+    box-shadow: -2px -2px 30px 15px rgba(0,0,0,0.10);
+}

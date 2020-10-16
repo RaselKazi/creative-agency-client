@@ -1,0 +1,27 @@
+#admin-service{
+    border-radius: 10px;
+    box-shadow: 0 0 3px gray;
+}
+.service-top{
+    background-color: #F5F6FA;
+    border-radius: 10px;
+}
+.title{
+    margin-top: 10px;
+}
+.bg-light-gray{
+    background-color: #e0e0e0;
+    padding: 10px 0 5px 10px;
+    border-radius: 10px;
+}
+tr,th, td{
+    border: none !important;
+}
+.list-table{
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+}
+.table-header{
+    background-color: #F5F6FA;
+}

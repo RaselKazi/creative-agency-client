@@ -1,0 +1,18 @@
+.user-icon img{
+    width: 40px;
+    border-radius: 20px;
+    margin: 0px 10px;
+}
+.dashbord-body{
+    width: 100%;
+    height: 90vh;
+    background: #E5E5E5
+}
+.form-body{
+    padding: 0.5rem;
+    border-radius: 10px;
+ }
+ .dashbord-hader{
+     height: 10vh;
+ }
+

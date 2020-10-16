@@ -1,0 +1,16 @@
+.file-btn{
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+}
+
+.input-file{
+    padding: 5px 10px;
+    position: relative;
+    opacity: 0;
+    
+}
+
+.upload-icon{
+    padding: 0 5px;
+}

@@ -1,0 +1,26 @@
+.client-service-card{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.service-title-sec{
+    position: relative;
+}
+.service-img img{
+    width: 70px;
+}
+.service-status{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+.btn-pending{
+    background-color: #FFE3E3;
+    color: red;
+}
+.btn-done{
+    background-color: #C6FFE0;
+    color: green;
+}
+

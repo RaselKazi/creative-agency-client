@@ -1,0 +1,20 @@
+.sidebar{
+    position: fixed;
+    height: 100vh;
+}
+.sidebar li{
+    margin-bottom: 1.6em;
+    color: #000;
+}
+.sidebar li span{
+    color: #000;
+}
+.sidebar li:hover span, .active {
+    display: inline-block;
+    transform: translate(5px);
+    color: rgb(40, 223, 40) !important;
+}
+.sidebar svg{
+    margin-right: 10px;
+    
+}
