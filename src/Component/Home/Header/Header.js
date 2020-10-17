@@ -6,11 +6,14 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div className="header-container">
+        <div>
             <Navbar></Navbar>
-            <HeaderMain></HeaderMain>
+            <section className="header-container">    
+                <HeaderMain></HeaderMain>     
+            </section>
             <BusinessInfo></BusinessInfo>
         </div>
+        
     );
 };
 

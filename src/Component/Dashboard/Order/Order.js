@@ -1,60 +1,70 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { faCloudUploadAlt} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../App';
 
 const Order = () => {
 
-    const { register, handleSubmit, errors } = useForm();
+    const [loggedInUser, setLoggedInUser, serviceData, setServiceData] = useContext(UserContext);
 
+    const handleSubmit = (e) => {
 
-    const onSubmit = data => {
-        console.log(data)
-        fetch('http://localhost:5000/addService', {
+        const orderInfo = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            serviceName: serviceData.title,
+            serviceDetail: serviceData.description,
+            projectDetail: e.target.projectDetail.value,
+            serviceIcon: serviceData.icon.img
+        }
+
+        console.log(orderInfo)
+        fetch('https://thawing-peak-06922.herokuapp.com/addOrder', {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data)
-    
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(orderInfo)
         })
-            .then(res => res.json())
-            .then(success => {
-
-                if (success) {
-                    alert('Email Added Successfully!!')
-                }
-            })
+        .then(res => res.json())
+        .then(success => {
+            if(success){
+                alert('order successfully added')
+            }
+        })
+        e.preventDefault()
     }
+
     return (
-        <form className="customFormStyle" onSubmit={handleSubmit(onSubmit)}>             
+        <form className="customFormStyle" onSubmit={handleSubmit}>             
         <div className="bg-white m-5 p-5 form-body">
             <div className="form-group">
                 <div class="form-row">
                     <div class="col-md-6">
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="title" className="form-control form-control-lg" placeholder="Enter title" />
-                        {errors.title && <span className="text-danger">This field is required</span>}
+                        <input type="text"  name="name" className="form-control form-control-lg" defaultValue={loggedInUser.name} placeholder="Your Name / Company's Name" />
+                      
                     </div>
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="title" className="form-control form-control-lg" placeholder="Enter title" />
-                        {errors.title && <span className="text-danger">This field is required</span>}
+                        <input type="email"  name="email" className="form-control form-control-lg"defaultValue={loggedInUser.email}  placeholder="Enter your email" />
+                        
                     </div>
                     <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="title" className="form-control form-control-lg" placeholder="Enter title" />
-                        {errors.title && <span className="text-danger">This field is required</span>}
+                        <input type="text"  name="category" defaultValue={serviceData.title} className="form-control form-control-lg" placeholder="Category Graphics, Web or Else" />
+                        
                     </div>
                     
                     <div className="form-group">
-                        <textarea type="text" ref={register({ required: true })} name="description" className="form-control" cols="30" rows="" placeholder="Enter Description"></textarea>
-                        {errors.description && <span className="text-danger">This field is required</span>}
+                        <textarea type="textarea"  name="description" className="form-control" cols="30" rows="3" placeholder="Project Details"></textarea>
+                       
                     </div>
                     </div>
 
                     <div className="row">
                     <div class="col-md-6">
                     <div className="form-group">
-                        <label htmlFor="">Service Title</label>
-                        <input type="text" ref={register({ required: true })} name="title" className="form-control form-control-lg" placeholder="Enter title" />
-                        {errors.title && <span className="text-danger">This field is required</span>}
+                        <label htmlFor="">Price</label>
+                        <input type="text"  name="Price" className="form-control form-control-lg" placeholder="Price" pattern="[0-9]+"/>
+                       
                     </div>
                     </div>
                     <div class="col-md-6">

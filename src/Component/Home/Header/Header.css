@@ -1,14 +1,19 @@
 .header-container {
-    height:535px;
+    height:602px;
     position:relative;
     background-color: #FBD062;
+    margin-bottom: 200px;
 }
 .header-container::before {
-    height:712px;
+    height:800px;
     content:'';
     position: absolute;
     width: 100%;
     background-color: #FBD062;
     clip-path: polygon(0 100%, 100% 75%, 0 75%);
     z-index: -50;
+}
+.nav-section{
+    background-color: #FBD062;
+
 }

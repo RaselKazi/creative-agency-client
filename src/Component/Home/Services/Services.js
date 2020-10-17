@@ -24,13 +24,13 @@ const Services = () => {
     const [serviceData, setServiceData] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/allServices')
+        fetch('https://thawing-peak-06922.herokuapp.com/allServices')
         .then(res => res.json())
         .then(data => setServiceData(data))
     }, [])
    
     return (
-        <div className="container" style={{marginTop: '350px', marginBottom: '50px', clear: 'both'}}>
+        <div className="container my-5">
         <section className="services-container text-center">
         <h1 className="mb-5">Provide awesome <span style={{ color: '#7AB259' }}>services</span></h1>
             <div className="d-flex justify-content-center">

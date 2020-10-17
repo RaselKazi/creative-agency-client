@@ -17,7 +17,7 @@ const AddService = () => {
         formData.append('title', e.target.title.value);
         formData.append('description', e.target.description.value);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://thawing-peak-06922.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })

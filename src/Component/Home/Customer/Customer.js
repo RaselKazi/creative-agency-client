@@ -32,15 +32,16 @@ const ReviewData = [
 
 const Blogs = () => {
     return (
-        <div className="container">
+        <div className="container mt-5">
         <div>
             <h1 className="text-center">Clients <span style={{ color: '#7AB259' }}>Feedback</span></h1>
         </div>
-        <div className="card-deck mt-5">
-            {
-                ReviewData.map(Review => <CustomerReview ReviewData={Review} key={Review.name}></CustomerReview>)
-            }
-        </div>
+   
+                <div className="card-deck mt-5">
+                {
+                    ReviewData.map(Review => <CustomerReview ReviewData={Review} key={Review.name}></CustomerReview>)
+                }
+            </div>    
     </div>
     );
 };

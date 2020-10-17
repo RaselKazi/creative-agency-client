@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
     
     const onSubmit = data => {
-        fetch('http://localhost:5000/addAdminEmail', {
+        fetch('https://thawing-peak-06922.herokuapp.com/addAdminEmail', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -22,6 +22,8 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [serviceData, setServiceData] = useState({});
+  const [isAdmin, setIsAdmin] = useState(false);
   const [NavItem, setNavItem] = useState({
     order: false,
     serviceListClient: false,
@@ -30,8 +32,11 @@ function App() {
     serviceListAdmin: false,
     makeAdmin: false
 })
+
+
+
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser , NavItem, setNavItem]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser , NavItem, setNavItem , serviceData, setServiceData ,isAdmin, setIsAdmin]}>
       <Router>
         <Switch>
           <Route exact path="/">

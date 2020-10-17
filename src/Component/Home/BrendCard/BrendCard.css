@@ -1,6 +1,15 @@
 
-
 .brend-img img{
 width: 120px;
 height: 60px;
+}
+
+
+@media screen and (max-width: 460px) {
+    
+    .brend-img img{  
+        width: 80px;
+        height: 50px;
+
+   }
 }

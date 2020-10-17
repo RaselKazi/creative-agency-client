@@ -22,7 +22,7 @@ const brendData = [
 ]
 const BrendInfo = () => {
     return (
-        <div className="container"style={{ marginBottom: '250px'}}>
+        <div className="container my-5" >
         <section className="my-5 ">
             <div className=" row d-flex justify-content-around">
                 {
